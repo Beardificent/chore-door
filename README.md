@@ -1,2 +1,2 @@
 # chore-door
-a game I made for a codecademy course.
+a game I'm making for a codecademy course.
