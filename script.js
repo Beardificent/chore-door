@@ -9,19 +9,59 @@ const numClosedDoors = 3;
 let openDoor1;
 let openDoor2;
 let openDoor3;
+let closedDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg';
+let startButton = document.getElementById('start');
+const isBot = () => {
+    if (door.src === botDoorPath){
+        return true;
+    } else {
+        return false;
+    }
+}
+const isClicked = (door) => {
+    if (door.src === closedDoorPath){
+        return false;
+    } else {
+        return true;
+    }
+}
 
+const playDoor= () => {
+    numClosedDoors--;
+    if (numClosedDoors === 0){
+        gameOver('win');
+    } else if (isBot(door)= true){
+        gameOver();
+    }
 
+}
 
 doorImage1.onclick = () => {
-    doorImage1.src = openDoor1;
+    if(!isClicked(doorImage1)){
+        doorImage1.src = openDoor1;
+        playDoor(doorImage1);
+    }
 }
 doorImage2.onclick = () => {
-    doorImage2.src = openDoor2;
+    if(!isClicked(doorImage2)){
+        doorImage2.src = openDoor2;
+        playDoor(doorImage2);
+    }
 }
 doorImage3.onclick = () => {
-    doorImage3.src = openDoor3;
+    if(!isClicked(doorImage3)){
+        doorImage3.src = openDoor3;
+        playDoor(doorImage3);
+    }
 }
+const gameOver = (status) => {
+    if (status === 'win'){
+        startButton.innerHTML = 'You win! Play again?';
+    } else {
+        startButton.innerHTML = 'Game over! Play Again?';
+    }
 
+}
 const randomChoreDoorGenerator = () => {
     let choreDoor = Math.floor(Math.random() * numClosedDoors);
     if (choreDoor === 0){
