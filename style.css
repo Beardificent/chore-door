@@ -1,10 +1,10 @@
 body {
-    background-color: #010165;
+    background: rgb(247,251,247);
+    background: linear-gradient(55deg, rgba(247,251,247,1) 0%, rgba(132,57,246,1) 100%);
     margin: 0px;
 }
 
 header {
-    background-color: #00ffff;
     text-align: center;
 }
 
@@ -17,7 +17,7 @@ header {
 .instructions-title {
     display: inline;
     font-size: 18px;
-    color: #00ffff;
+    color: rgba(132,57,246,1);
     font-family: 'Work Sans';
 }
 
@@ -30,7 +30,7 @@ header {
     padding-right: 25px;
     font-family: 'Work Sans';
     font-size: 36px;
-    color: #00ffff
+    color: rgba(132,57,246,1);
 }
 
 .instructions-text {
@@ -53,14 +53,18 @@ header {
 
 .start-row {
     margin: auto;
-    width: 120px;
+    width: 130px;
     height: 43px;
     font-family: 'Work Sans';
-    background-color: #eb6536;
+    border-radius: 10px;
+    background-color: rgba(132,57,246,1);
     padding-top: 18px;
+    padding-bottom: 9px;
     font-size: 18px;
+    font-weight: 900;
+    text-shadow: 2px 2px #010165;
     text-align: center;
-    color: #010165;
+    color: rgb(247,251,247);
     margin-bottom: 21px;
     cursor: pointer;
 }
