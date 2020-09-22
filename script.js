@@ -11,7 +11,7 @@ let openDoor2;
 let openDoor3;
 let closedDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg';
 let startButton = document.getElementById('start');
-const currentlyPlaying = true;
+let currentlyPlaying = true;
 
 const isBot = (door) => {
     if (door.src === botDoorPath){
