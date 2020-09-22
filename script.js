@@ -56,6 +56,19 @@ doorImage3.onclick = () => {
         playDoor(doorImage3);
     }
 }
+let startRound = () =>{
+    numClosedDoors = 3;
+    doorImage1.src = closedDoorPath;
+    doorImage2.src = closedDoorPath;
+    doorImage3.src = closedDoorPath;
+    startButton.innerHTML = 'Good luck!'
+    currentlyPlaying = true;
+    randomChoreDoorGenerator();
+}
+
+startButton.onclick = () => {
+    if (currentlyPlaying == false)startRound();
+}
 let gameOver = (status) => {
     if (status === 'win'){
         startButton.innerHTML = 'You win! Play again?';
@@ -82,4 +95,4 @@ const randomChoreDoorGenerator = () => {
     }
 
 }
-randomChoreDoorGenerator ();
+startRound ();
