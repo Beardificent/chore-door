@@ -5,13 +5,15 @@ let botDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-do
 let beachDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg';
 let spaceDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg';
 
-const numClosedDoors = 3;
+let numClosedDoors = 3;
 let openDoor1;
 let openDoor2;
 let openDoor3;
 let closedDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg';
 let startButton = document.getElementById('start');
-const isBot = () => {
+
+
+const isBot = (door) => {
     if (door.src === botDoorPath){
         return true;
     } else {
@@ -26,11 +28,11 @@ const isClicked = (door) => {
     }
 }
 
-const playDoor= () => {
+const playDoor= (door) => {
     numClosedDoors--;
     if (numClosedDoors === 0){
         gameOver('win');
-    } else if (isBot(door)= true){
+    } else if (isBot(door) == true){
         gameOver();
     }
 
@@ -54,7 +56,7 @@ doorImage3.onclick = () => {
         playDoor(doorImage3);
     }
 }
-const gameOver = (status) => {
+let gameOver = (status) => {
     if (status === 'win'){
         startButton.innerHTML = 'You win! Play again?';
     } else {
